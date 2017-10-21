@@ -26,6 +26,8 @@ namespace SeventhSon.Web
         {
             services.AddMvc();
 
+            services.AddSignalR();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "Seventh Son API", Version = "v1" });
@@ -41,6 +43,11 @@ namespace SeventhSon.Web
             }
                         
             app.UseMvc();
+
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<EventHub>("eventhub");
+            });
 
             app.UseSwagger();
 
