@@ -4,12 +4,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
+using Microsoft.AspNetCore.SignalR;
 
 namespace SeventhSon.Web.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        private readonly IHubContext<EventHub> _eventHub;
+
+        public ValuesController(IHubContext<EventHub> eventHub)
+        {
+            _eventHub = eventHub;
+        }
+
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
@@ -26,8 +34,9 @@ namespace SeventhSon.Web.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]JToken value)
+        public void Post([FromBody]string value)
         {
+            _eventHub.Clients.All.InvokeAsync("Send", value);
         }
 
         // PUT api/values/5

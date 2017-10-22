@@ -28,7 +28,6 @@ namespace SeventhSon.Web
 
             services.AddSignalR();
 
-
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "Seventh Son API", Version = "v1" });
