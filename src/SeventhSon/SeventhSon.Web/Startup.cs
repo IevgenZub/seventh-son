@@ -28,6 +28,7 @@ namespace SeventhSon.Web
 
             services.AddSignalR();
 
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "Seventh Son API", Version = "v1" });
@@ -43,6 +44,8 @@ namespace SeventhSon.Web
             }
                         
             app.UseMvc();
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
 
             app.UseSignalR(routes =>
             {
@@ -55,6 +58,7 @@ namespace SeventhSon.Web
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Seventh Son API V1");
             });
+
         }
     }
 }
