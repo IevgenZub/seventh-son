@@ -8,6 +8,8 @@
 <body>
     Seventh Son
 
+    <button onclick="connection.invoke('Send','Yo!')">Send Yo!</button>
+
     <script>
         var connection = new signalR.HubConnection('/eventhub');
 
