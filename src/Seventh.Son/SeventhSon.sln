@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeventhSon.Web", "SeventhSon.Web\SeventhSon.Web.csproj", "{BF33E45B-FA3A-4DB8-A8AC-7E2E7B523FA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeventhSon.Web", "Seventh-Son.Web\SeventhSon.Web.csproj", "{7D62A658-9925-455F-8670-897B7A657800}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BF33E45B-FA3A-4DB8-A8AC-7E2E7B523FA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BF33E45B-FA3A-4DB8-A8AC-7E2E7B523FA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BF33E45B-FA3A-4DB8-A8AC-7E2E7B523FA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BF33E45B-FA3A-4DB8-A8AC-7E2E7B523FA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D62A658-9925-455F-8670-897B7A657800}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D62A658-9925-455F-8670-897B7A657800}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D62A658-9925-455F-8670-897B7A657800}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D62A658-9925-455F-8670-897B7A657800}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {1B059C7A-19F8-4D95-957C-0E5372328DCC}
+		SolutionGuid = {889BEE91-E0BC-40B8-8539-ACA9235E3BEE}
 	EndGlobalSection
 EndGlobal
