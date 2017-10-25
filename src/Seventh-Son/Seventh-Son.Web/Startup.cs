@@ -8,6 +8,7 @@ using Seventh_Son.Web.Data;
 using Seventh_Son.Web.Models;
 using Seventh_Son.Web.Services;
 using Swashbuckle.AspNetCore.Swagger;
+using Seventh_Son.Web.Hubs;
 
 namespace Seventh_Son.Web
 {
@@ -34,6 +35,8 @@ namespace Seventh_Son.Web
             services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddMvc();
+
+            services.AddSignalR();
 
             services.AddSwaggerGen(c =>
             {
@@ -64,6 +67,11 @@ namespace Seventh_Son.Web
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+            });
+
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<EventHub>("eventhub");
             });
 
             app.UseSwagger();
