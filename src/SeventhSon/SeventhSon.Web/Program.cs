@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace SeventhSon.Web
+namespace Seventh_Son.Web
 {
     public class Program
     {

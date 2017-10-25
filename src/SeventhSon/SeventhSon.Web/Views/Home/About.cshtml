@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "About";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<p>Seventh Son</p>
+
+<button onclick="connection.invoke('Send','Yo!')">Send Yo!</button>
+
+<script src="~/lib/signalr-client/signalr-client-1.0.0-alpha2-final.js"></script>
+
+<script>
+    var connection = new signalR.HubConnection('/eventhub');
+    connection.on('send', function (data) {
+        console.log(data);
+    });
+    connection.start();
+</script>
