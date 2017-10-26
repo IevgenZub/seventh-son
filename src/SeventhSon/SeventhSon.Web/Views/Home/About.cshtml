@@ -6,9 +6,56 @@
 
 <p>Seventh Son</p>
 
-<button onclick="connection.invoke('Send','Yo!')">Send Yo!</button>
+<style type="text/css">
+    #container {
+        max-width: 500px;
+        height: 500px;
+        margin: auto;
+    }
+</style>
 
 <script src="~/lib/signalr-client/signalr-client-1.0.0-alpha2-final.js"></script>
+<script src="~/lib/sigma/sigma.min.js"></script>
+<script src="~/lib/sigma/plugins/sigma.parsers.json.min.js"></script>
+
+<button onclick="connection.invoke('Send','Yo!')">Send Yo!</button>
+
+<div id="container"></div>
+
+<script>
+
+    // Let's first initialize sigma:
+    var s = new sigma('container');
+
+    // Then, let's add some data to display:
+    s.graph.addNode({
+        // Main attributes:
+        id: 'n0',
+        label: 'Hello',
+        // Display attributes:
+        x: 0,
+        y: 0,
+        size: 1,
+        color: '#f00'
+    }).addNode({
+        // Main attributes:
+        id: 'n1',
+        label: 'World !',
+        // Display attributes:
+        x: 1,
+        y: 1,
+        size: 1,
+        color: '#00f'
+    }).addEdge({
+        id: 'e0',
+        // Reference extremities:
+        source: 'n0',
+        target: 'n1'
+    });
+
+    // Finally, let's ask our sigma instance to refresh:
+    s.refresh();
+</script>
 
 <script>
     var connection = new signalR.HubConnection('/eventhub');
