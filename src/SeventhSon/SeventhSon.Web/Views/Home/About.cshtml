@@ -63,4 +63,37 @@
         console.log(data);
     });
     connection.start();
+
+    setTimeout(function ()
+    { 
+        FB.getLoginStatus(function (response) {
+            if (response.status === 'connected') {
+                // the user is logged in and has authenticated your
+                // app, and response.authResponse supplies
+                // the user's ID, a valid access token, a signed
+                // request, and the time the access token 
+                // and signed request each expire
+                var uid = response.authResponse.userID;
+                var accessToken = response.authResponse.accessToken;
+
+                FB.api('/me', {
+                    fields: 'name, picture, hometown'
+                }, function (response) {
+                    if (!response || response.error) {
+                        console.warn("no response or error");                        
+                    } else {
+                        console.log(response);
+                    }
+                });
+
+            } else if (response.status === 'not_authorized') {
+                // the user is logged in to Facebook, 
+                // but has not authenticated your app
+            } else {
+                // the user isn't logged in to Facebook.
+            }
+        })
+    }, 3000);
+
 </script>
+
